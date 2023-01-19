@@ -84,7 +84,8 @@ class login_signup_form extends moodleform implements renderable, templatable {
 
         // Make country field Required - Mandatory
         // Original: $mform->addElement('select', 'country', get_string('country'), $country);
-
+        
+        // Edited:
         $mform->addElement('select', 'country', get_string('country'), $country, ['required' => true]);
 
         if( !empty($CFG->country) ){
