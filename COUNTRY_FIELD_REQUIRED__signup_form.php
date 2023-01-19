@@ -89,7 +89,7 @@ class login_signup_form extends moodleform implements renderable, templatable {
         $mform->addElement('select', 'country', get_string('country'), $country, ['required' => true]);
         
         // Add this for enabling the required fa-icon:
-        $mform->addRule('country', get_string('missingcountry'), 'required', null, 'client');        
+        $mform->addRule('country', get_string('placeholdertypeorselect'), 'required', null, 'client');        
 
         if( !empty($CFG->country) ){
             $mform->setDefault('country', $CFG->country);
