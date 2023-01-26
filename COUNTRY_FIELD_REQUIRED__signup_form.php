@@ -81,15 +81,14 @@ class login_signup_form extends moodleform implements renderable, templatable {
         $country = get_string_manager()->get_list_of_countries();
         $default_country[''] = get_string('selectacountry');
         $country = array_merge($default_country, $country);
-
-        // Make country field Required - Mandatory
+        /////////////////////////////////////////// Make country field Required - Mandatory ///////////////////////////////////////////
         // Original: $mform->addElement('select', 'country', get_string('country'), $country);
         
-        // Edited:
+        // Edited required:
         $mform->addElement('select', 'country', get_string('country'), $country, ['required' => true]);
-        
-        // Add this for enabling the required fa-icon:
-        $mform->addRule('country', get_string('placeholdertypeorselect'), 'required', null, 'client');        
+        // Added for enabling required fa-icon:
+        $mform->addRule('country', get_string('placeholdertypeorselect'), 'required', null, 'client');     
+        /////////////////////////////////////////// END Make country field Required - Mandatory ///////////////////////////////////////////
 
         if( !empty($CFG->country) ){
             $mform->setDefault('country', $CFG->country);
