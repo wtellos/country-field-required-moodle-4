@@ -12,3 +12,5 @@ $mform->addElement('select', 'country', get_string('country'), $country);
 and replace with:
 $mform->addElement('select', 'country', get_string('country'), $country, ['required' => true]);
 
+Added below line for enabling the required fa-icon:
+$mform->addRule('country', get_string('placeholdertypeorselect'), 'required', null, 'client'); 
